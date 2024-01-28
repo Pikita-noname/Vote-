@@ -7,21 +7,17 @@ import { voteListRoute } from "./routes/votelistRoute.js";
 const app = express();
 
 mongoose
-.connect('mongodb://localhost:27017/Vote')
-.then(() => console.log("DB ok"))
-.catch((e)=>console.log(e))
+  .connect("mongodb://localhost:27017/Vote")
+  .then(() => console.log("DB ok"))
+  .catch((e) => console.log(e));
 
 app.use(express.json());
 
-app.use("/user", userRoute)
-app.use("/voteList", voteListRoute)
-
-
-
-
+app.use("/user", userRoute);
+app.use("/voteList", voteListRoute);
 
 app.listen(2805, (err) => {
-    if(err) return console.log("не ОК");
+  if (err) return console.log("не ОК");
 
-    console.log("OK");
-})
+  console.log("OK");
+});

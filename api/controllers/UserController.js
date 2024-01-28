@@ -1,8 +1,7 @@
 import jwt from "jsonwebtoken";
 import bcrypt from "bcrypt";
-import {validationResult} from "express-validator";
+import { validationResult } from "express-validator";
 import UserModel from "../models/User.js";
-
 
 export const RegisterController = async (req, res) => {
   try {
@@ -50,12 +49,13 @@ export const RegisterController = async (req, res) => {
 
 export const LoginController = async (req, res) => {
   try {
-    const user = await UserModel.findOne({phone:req.body.phone})
-    if(!user) throw new Error("Такого пользователя не существует");
+    const user = await UserModel.findOne({ phone: req.body.phone });
+    if (!user) throw new Error("Такого пользователя не существует");
 
     const salt = await bcrypt.genSalt(11);
     const passwordHash = await bcrypt.hash(req.body.password, salt);
-    if(user.passwordHash !== passwordHash) throw new Error("Пароли не совпадают");
+    if (user.passwordHash !== passwordHash)
+      throw new Error("Пароли не совпадают");
 
     const token = jwt.sign(
       {

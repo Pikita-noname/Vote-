@@ -1,32 +1,27 @@
 import mongoose from "mongoose";
 
- const VoteListSchema = new mongoose.Schema({
+const VoteListSchema = new mongoose.Schema(
+  {
     name: {
-        type: String,
-        required: true,
+      type: String,
+      required: true,
     },
-    voteElement: [
-        {
-            name: {
-                type:String,
-                required: true,
-            },
-            count: {
-                type: Number,
-            },
-            voted: [{
-
-            }]
-        }
+    voteElements: [
+      {
+        name: {
+          type: String,
+        },
+        count: {
+          type: Number,
+          default: 0,
+        },
+        voted: [{ ref: "User", type: mongoose.Schema.Types.ObjectId }],
+      },
     ],
-    passwordHash: {
-        type: String,
-        required: true,
-    }
-    },
-    {
-        timestamps: true,
-    }
-)
+  },
+  {
+    timestamps: true,
+  }
+);
 
-export default mongoose.model('Votelist', UserSchema);
+export default mongoose.model("Votelist", VoteListSchema);

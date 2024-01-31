@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { createController } from "../controllers/VotelistController.js";
+import { createController, getController } from "../controllers/VotelistController.js";
 
 export const voteListRoute = Router();
 
@@ -8,7 +8,7 @@ voteListRoute.get("/list", (req, res) => {
     test: true,
   });
 });
-voteListRoute.get("/:id", createController);
+voteListRoute.get("/:id", getController);
 voteListRoute.post("/create", createController);
 voteListRoute.patch("/:id", (req, res) => {
   res.send("OK");

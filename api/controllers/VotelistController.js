@@ -22,3 +22,25 @@ export const createController = async (req, res) => {
     });
   }
 };
+
+export const getController = async (req, res) => {
+  try {
+    const id = req.params.id;
+
+    if (!id) throw new Error("Не передан id");
+
+    const currentVoteList = await Votelist.findById(id);
+
+    res.json({
+      success: true,
+      response: {
+        currentVoteList,
+      },
+    });
+  } catch (err) {
+    console.log(err);
+    return res.status(500).json({
+      message: "Ошибка обработки запроса" + err,
+    });
+  }
+};

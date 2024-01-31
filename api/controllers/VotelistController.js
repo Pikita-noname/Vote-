@@ -4,7 +4,7 @@ export const createController = async (req, res) => {
   try {
     const doc = new Votelist({
       name: req.body.name,
-      voteElements: [req.body.voteElements],
+      voteElements: req.body.voteElements,
     });
 
     const voteList = await doc.save();

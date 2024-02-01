@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const VoteListSchema = new mongoose.Schema(
+const VotelistSchema = new mongoose.Schema(
   {
     name: {
       type: String,
@@ -24,4 +24,4 @@ const VoteListSchema = new mongoose.Schema(
   }
 );
 
-export default mongoose.model("Votelist", VoteListSchema);
+export default mongoose.model("Votelist", VotelistSchema);

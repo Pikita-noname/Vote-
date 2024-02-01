@@ -1,18 +1,18 @@
 import { Router } from "express";
-import { createController, getController } from "../controllers/VotelistController.js";
+import 
+{
+  createController,
+  getController,
+  updateController,
+  deleteCotroller,
+  getAllCotroller,
+}
+from "../controllers/VotelistController.js";
 
 export const voteListRoute = Router();
 
-voteListRoute.get("/list", (req, res) => {
-  res.json({
-    test: true,
-  });
-});
+voteListRoute.get("/", getAllCotroller);
 voteListRoute.get("/:id", getController);
 voteListRoute.post("/create", createController);
-voteListRoute.patch("/:id", (req, res) => {
-  res.send("OK");
-});
-voteListRoute.delete("/:id", (req, res) => {
-  res.send("OK");
-});
+voteListRoute.patch("/:id", updateController);
+voteListRoute.delete("/:id", deleteCotroller);

@@ -1,16 +1,11 @@
-import { useState } from "react";
-import { Button } from "./UI/Button/Button.jsx";
 import s from './App.module.css';
-import { VoteListElement } from "./components/VoteListElement/VoteListElement.jsx";
+import { VoteListElement } from "./components/VoteListComponents/VoteListElement/VoteListElement.jsx";
+import LoginPage from './pages/LoginPage/LoginPage';
 
 function App() {
   return (
     <>
-      <div className={s.wrapper}>
-        <VoteListElement
-        elementData={{name: "Какое то голосование"}}
-        />
-      </div>
+      <LoginPage />
     </>
   );
 }

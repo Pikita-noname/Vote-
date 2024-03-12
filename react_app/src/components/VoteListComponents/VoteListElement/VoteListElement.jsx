@@ -6,9 +6,7 @@ export const VoteListElement = ({elementData}) => {
 
     return (
         <>
-            <div>
-                <a href={`/`}>{element.name}</a>
-            </div>
+            
         </>
     )
 }

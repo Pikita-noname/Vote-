@@ -68,3 +68,10 @@
   font-weight: 700;
   line-height: normal;
 }
+
+.modal {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 30px;
+}

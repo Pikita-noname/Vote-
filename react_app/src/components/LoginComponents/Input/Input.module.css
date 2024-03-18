@@ -1,0 +1,43 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.labelWrap {
+  border-radius: 30px;
+  border: 3px solid #262626;
+  background: rgba(217, 217, 217, 0);
+  width: fit-content;
+  padding: 2px 6px;
+}
+
+.label {
+  color: #fff;
+  font-family: Montserrat;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.input {
+  color: rgba(255, 255, 255, 0.4);
+  text-shadow: 0px 4px 20px rgba(255, 255, 255, 0.15);
+  font-family: Montserrat;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  background: transparent;
+  border: none;
+  border-bottom: 3px solid;
+  border-image:linear-gradient(90deg, rgba(75, 75, 75, 0.80) 0%, rgba(35, 35, 35, 0.40) 78.03%);
+  border-image-slice: 10;
+  transition: all 0.5s ease;
+}
+
+.input:focus {
+  outline: none;
+  border-image-slice: 100;
+}

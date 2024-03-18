@@ -14,7 +14,10 @@ const LoginPage = () => {
               <p className={`${s.title} ${s.firstLetter}`}>А</p>
               <p className={s.title}>вторизация</p>
             </div>
-            <Input label="картошка" value={89963890523} />
+            <div className={s.modal}>
+              <Input label="телефон" value={''} inputType={'phone'} />
+              <Input label="телефон" value={''} inputType={'phone'} />
+            </div>
           </div>
         </div>
       </div>

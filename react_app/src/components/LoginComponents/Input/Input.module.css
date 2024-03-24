@@ -13,6 +13,8 @@
 }
 
 .label {
+  animation: fadeInAnimation 0.5s ease-in-out;
+  transition: all 0.5s ease;
   color: #fff;
   font-family: Montserrat;
   font-size: 14px;
@@ -21,7 +23,19 @@
   line-height: normal;
 }
 
+.error {
+  animation: fadeInAnimation 0.5s ease-in-out;
+  transition: all 0.5s ease;
+  color: rgb(255, 73, 73);
+  font-family: Montserrat;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
 .input {
+  padding-left: 15px;
   color: rgba(255, 255, 255, 0.4);
   text-shadow: 0px 4px 20px rgba(255, 255, 255, 0.15);
   font-family: Montserrat;
@@ -32,7 +46,11 @@
   background: transparent;
   border: none;
   border-bottom: 3px solid;
-  border-image:linear-gradient(90deg, rgba(75, 75, 75, 0.80) 0%, rgba(35, 35, 35, 0.40) 78.03%);
+  border-image: linear-gradient(
+    90deg,
+    rgba(75, 75, 75, 0.8) 0%,
+    rgba(35, 35, 35, 0.4) 78.03%
+  );
   border-image-slice: 10;
   transition: all 0.5s ease;
 }
@@ -41,3 +59,8 @@
   outline: none;
   border-image-slice: 100;
 }
+
+input[type="password"] {
+  -webkit-text-security: disc;
+}
+

@@ -1,30 +1,38 @@
-import { useState } from "react";
+import { forwardRef, useState } from "react";
 import s from "./Input.module.css";
 
-const Input = ({ label, value, inputType = "text" }) => {
-  const [inputValue, setInputValue] = useState(value);
-
-  const inputTypes = {
-    phone: "numeric",
-    text: "text",
-  };
-
-  return (
-    <>
-      <div className={s.wrapper}>
-        <div className={s.labelWrap}>
-        <label className={s.label}>{label}</label>
+const Input = forwardRef(
+  (
+    { label, value, inputType = "text", onChange, placeholder, errors },
+    ref
+  ) => {
+    const inputTypes = {
+      phone: "numeric",
+      text: "text",
+      password: "password",
+    };
+    return (
+      <>
+        <div className={s.wrapper}>
+          <div className={s.labelWrap}>
+            {errors?.message ? (
+              <label className={s.error}>{errors?.message}</label>
+            ) : (
+              <label className={s.label}>{label}</label>
+            )}
+          </div>
+          <input
+            ref={ref}
+            placeholder={placeholder}
+            className={s.input}
+            type={inputTypes[inputType]}
+            value={value}
+            onChange={(e) => onChange(e.target.value)}
+          />
         </div>
-        <input
-        placeholder="+ 7 (999) 000 00 00"
-          className={s.input}
-          type={inputTypes[inputType]}
-          value={inputValue}
-          onChange={(e) => setInputValue(e.target.value)}
-        />
-      </div>
-    </>
-  );
-};
+      </>
+    );
+  }
+);
 
 export default Input;

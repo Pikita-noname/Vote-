@@ -8,6 +8,8 @@
   height: 100%;
   background-image: url(../../assets/BG-cubes.png);
   background-position: 0px -130px;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .label {
@@ -79,4 +81,21 @@ form {
   display: flex;
   flex-direction: column;
   gap: 15px;
+}
+
+.submit {
+  cursor: pointer;
+  position: absolute;
+  bottom: -25px;
+  left: -30px;
+  padding: 25px 35px;
+  border: none;
+  border-radius: 35px;
+  background: rgba(81, 80, 80, 0.65);
+  box-shadow: 0 4px 40px 0 rgba(0, 0, 0, 0.70);
+  color: #FFF;
+  font-size: 60px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
 }

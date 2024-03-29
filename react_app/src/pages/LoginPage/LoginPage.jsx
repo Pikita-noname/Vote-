@@ -20,12 +20,6 @@ const LoginPage = () => {
 
   const {
     ref,
-    maskRef,
-    setValue,
-    unmaskedValue,
-    setUnmaskedValue,
-    typedValue,
-    setTypedValue,
   } = useIMask({
     mask: "[+7] (000)-000-00-00",
   });
@@ -86,7 +80,7 @@ const LoginPage = () => {
                     />
                   )}
                 />
-                <input type="submit" value="hui" />
+                <input className={s.submit} type="submit" value="Go" />
               </form>
               <Cross isValid={isValid}/>
             </div>

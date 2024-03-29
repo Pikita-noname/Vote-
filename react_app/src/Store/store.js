@@ -3,6 +3,7 @@ import VoteReducer from "./VoteSlice"
 
 export default configureStore({
     reducer:{
+        user: UserReducer,
         votes: VoteReducer
     }
 })

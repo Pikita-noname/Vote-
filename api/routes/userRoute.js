@@ -6,5 +6,5 @@ import {registerValidation} from "../services/Validation/Validator.js";
 
 export const userRoute = Router();
 
-userRoute.post("/register",registerValidation, RegisterController)
-userRoute.post("/login", LoginController)
+userRoute.post("/register", RegisterController)
+userRoute.post("/auth", LoginController)

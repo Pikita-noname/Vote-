@@ -4,6 +4,7 @@ import { useIMask } from "react-imask";
 import Input from "../../components/LoginComponents/Input/Input";
 import { Cross } from "../../UI/Cross/Cross";
 import s from "./LoginPage.module.css";
+import { useAuthMutation } from '../../Store/api/UserApiSlice.js'
 
 const LoginPage = () => {
   const {
@@ -20,10 +21,13 @@ const LoginPage = () => {
 
   const {
     ref,
+      unmaskedValue
   } = useIMask({
     mask: "[+7] (000)-000-00-00",
   });
-  const onSubmit = (data) => console.log(data);
+  const [auth] = useAuthMutation();
+
+  const onSubmit = (data) => auth( { phone: `7${unmaskedValue}`, password: data.password} );
   return (
     <>
       <div className={s.pageWrapper}>
@@ -82,6 +86,7 @@ const LoginPage = () => {
                 />
                 <input className={s.submit} type="submit" value="Go" />
               </form>
+              <button onClick={() => console.log(selectUser)}></button>
               <Cross isValid={isValid}/>
             </div>
           </div>

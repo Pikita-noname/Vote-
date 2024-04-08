@@ -2,7 +2,7 @@ import s from "./Cross.module.css";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 
-export const Cross = ({ isValid }) => {
+const Cross = ({ isValid }) => {
   return (
     <div className={s.wrapper}>
       <div className={isValid ? s.tick_1 : s.cross_1} />
@@ -10,3 +10,5 @@ export const Cross = ({ isValid }) => {
     </div>
   );
 };
+
+export default Cross;

@@ -1,0 +1,65 @@
+.wrapper {
+  margin-left: 245px;
+  margin-top: 40px;
+  position: relative;
+}
+
+.tick_2 {
+  transition: all 0.5s ease;
+  transform: rotate(45deg) translate(0px, -10px);
+  position: absolute;
+  width: 30px;
+  height: 137px;
+  border-radius: 90px;
+  background: linear-gradient(
+    186deg,
+    #22a676 16.57%,
+    rgba(73, 255, 190, 0) 149.85%
+  );
+  filter: drop-shadow(0px 4px 60px rgba(70, 245, 129, 0.6));
+}
+
+.tick_1 {
+  transition: all 0.5s ease;
+  transform: rotate(325deg) translate(-56px, -10px);
+  position: absolute;
+  width: 30px;
+  height: 96px;
+  border-radius: 90px;
+  background: linear-gradient(
+    186deg,
+    #22a676 16.57%,
+    rgba(73, 255, 190, 0) 149.85%
+  );
+  filter: drop-shadow(0px 4px 60px rgba(70, 245, 129, 0.6));
+}
+
+.cross_2 {
+  transition: all 0.5s ease;
+  transform: rotate(135deg);
+  position: absolute;
+  width: 30px;
+  height: 137px;
+  border-radius: 90px;
+  filter: drop-shadow(0px 4px 60px rgba(245, 70, 70, 0.6));
+  background: linear-gradient(
+    186deg,
+    #ec4f4f 16.57%,
+    rgba(73, 255, 190, 0) 149.85%
+  );
+}
+
+.cross_1 {
+  transition: all 0.5s ease;
+  transform: rotate(225deg);
+  position: absolute;
+  width: 30px;
+  height: 137px;
+  border-radius: 90px;
+  filter: drop-shadow(0px 4px 60px rgba(245, 70, 70, 0.6));
+  background: linear-gradient(
+    186deg,
+    #ec4f4f 16.57%,
+    rgba(73, 255, 190, 0) 149.85%
+  );
+}

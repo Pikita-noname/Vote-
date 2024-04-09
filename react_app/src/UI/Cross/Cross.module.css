@@ -1,6 +1,10 @@
+.container {
+  position: absolute;
+  right: 30%;
+  bottom: 35%;
+}
+
 .wrapper {
-  margin-left: 245px;
-  margin-top: 40px;
   position: relative;
 }
 

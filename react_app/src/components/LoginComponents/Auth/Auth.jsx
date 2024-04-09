@@ -6,7 +6,7 @@ import { ImaskInput } from "../../../UI/ImaskInput/ImaskInput";
 import Input from "../Input/Input";
 import s from "./Auth.module.css";
 
-const Auth = () => {
+const Auth = ({ changeForm }) => {
   const {
     handleSubmit,
     control,
@@ -83,6 +83,7 @@ const Auth = () => {
                 />
                 <input className={s.submit} type="submit" value="Go" />
               </form>
+              <p className={s.changeFormLink} onClick={() => changeForm()}>зарегестрироваться</p>
               <Cross isValid={isValid} />
             </div>
           </div>

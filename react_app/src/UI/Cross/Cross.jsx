@@ -4,9 +4,11 @@ import { useEffect, useState } from "react";
 
 const Cross = ({ isValid }) => {
   return (
-    <div className={s.wrapper}>
-      <div className={isValid ? s.tick_1 : s.cross_1} />
-      <div className={isValid ? s.tick_2 : s.cross_2} />
+    <div className={s.container}>
+      <div className={s.wrapper}>
+        <div className={isValid ? s.tick_1 : s.cross_1} />
+        <div className={isValid ? s.tick_2 : s.cross_2} />
+      </div>
     </div>
   );
 };

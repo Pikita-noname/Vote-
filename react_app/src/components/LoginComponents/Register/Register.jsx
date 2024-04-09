@@ -1,13 +1,15 @@
 import { useForm, Controller } from "react-hook-form";
-import { useAuthMutation, useRegisterMutation } from "../../../Store/api/UserApiSlice";
+import {
+  useAuthMutation,
+  useRegisterMutation,
+} from "../../../Store/api/UserApiSlice";
 import Cross from "../../../UI/Cross/Cross";
 
 import { ImaskInput } from "../../../UI/ImaskInput/ImaskInput";
 import Input from "../Input/Input";
 import s from "./Register.module.css";
 
-const Register = () => {
-
+const Register = ({ changeForm }) => {
   const {
     handleSubmit,
     control,
@@ -105,6 +107,12 @@ const Register = () => {
 
                 <input className={s.submit} type="submit" value="Go" />
               </form>
+              <div className={s.PositionWrapper}>
+                <span className={s.text}>уже есть аккаунт?</span>
+                <span className={s.changeFormLink} onClick={() => {changeForm()}}>
+                  Войти
+                </span>
+              </div>
               <Cross isValid={isValid} />
             </div>
           </div>

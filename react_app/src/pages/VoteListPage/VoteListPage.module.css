@@ -6,7 +6,7 @@
 
 .background {
   height: 120%;
-  background-image: url(../../../assets/BG-cubes.png);
+  background-image: url(../../assets/BG-cubes.png);
   background-position: 0px -130px;
   background-repeat: no-repeat;
   background-size: cover;
@@ -63,7 +63,7 @@
 }
 
 .firstLetter {
-  transform: rotate(325deg) translate(0px, 5px);
+  transform: rotate(179.974deg) translate(-10px, -10px);
   color: #fff;
   font-size: 80px;
   font-style: normal;
@@ -98,30 +98,4 @@ form {
   font-style: normal;
   font-weight: 700;
   line-height: normal;
-}
-
-.PositionWrapper {
-  position: absolute;
-  top: 0;
-  right: 0;
-  margin: 25px;
-}
-
-.changeFormLink {
-  width: fit-content;
-  color: #fff;
-  font-family: Montserrat;
-  font-size: 14px;
-  font-weight: 700;
-  text-decoration: underline;
-  cursor: pointer;
-}
-
-.text {
-  margin-right: 5px;
-  width: fit-content;
-  color: #fff;
-  font-family: Montserrat;
-  font-size: 14px;
-  font-weight: 700;
 }

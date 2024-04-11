@@ -19,11 +19,12 @@ const Auth = ({ changeForm }) => {
     },
   });
 
-  const [auth, { isError, error }] = useAuthMutation();
-  if (isError) alert(error.data.message);
+  const [auth, { isError, error, }] = useAuthMutation();
 
-  const onSubmit = (data) => {
-    auth({ phone: `7${data.phone}`, password: data.password });
+  const onSubmit = async (data) => {
+   data = await auth({ phone: `7${data.phone}`, password: data.password }).unwrap();
+   debugger
+   localStorage.setItem('token', data.response)
   };
 
   return (

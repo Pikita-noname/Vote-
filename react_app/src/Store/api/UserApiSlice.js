@@ -2,7 +2,12 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
 export const UserApiSlice = createApi({
   reducerPath: "userApi",
-  baseQuery: fetchBaseQuery({ baseUrl: "http://localhost:8888/user" }),
+  baseQuery: fetchBaseQuery({ baseUrl: "http://localhost:8888/user", prepareHeaders: (headers, {getState}) => {
+    const token = localStorage.getItem('token');
+    if(token) {
+      headers.set('Token', `Bearer ${token}`)
+    }
+  } }),
   endpoints: (builder) => ({
     auth: builder.mutation({
       query: (data) => ({
@@ -21,8 +26,7 @@ export const UserApiSlice = createApi({
     current: builder.mutation({
       query: (data) => ({
         url: "/current",
-        method: "POST",
-        body: data,
+        method: "GET",
       }),
     }),
   }),

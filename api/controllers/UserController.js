@@ -77,3 +77,26 @@ export const LoginController = async (req, res) => {
     });
   }
 };
+
+export const CurrentController = async (req, res) => {
+  try {
+    const token = req.headers["token"] && req.headers["token"].split(' ')[1];
+
+    jwt.verify(token, "69df8b70e8d204e2fc6b52aceeb8748a815f7ef5", (err, user) => {
+      if(err) {
+        return res.status(403).json({
+          error: 'Invalid token'
+        })
+      }
+      res.json({
+        response: user,
+      });
+    });
+
+  } catch (err) {
+    console.log(err);
+    return res.status(500).json({
+      message: "Ошибка обработки запроса " + err,
+    });
+  }
+};

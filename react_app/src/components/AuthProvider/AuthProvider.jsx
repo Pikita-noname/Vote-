@@ -1,19 +1,21 @@
 import { useEffect } from "react";
-import VoteListPage from "../../pages/VoteListPage/VoteListPage";
 import { useCurrentMutation } from "../../Store/api/UserApiSlice";
-import { useNavigate, useLocation } from "react-router-dom";
+import Redirector from "../Util/Redirector";
 
 const AuthProvider = () => {
   const [getUser, { isError, isLoading }] = useCurrentMutation();
-  const location = useLocation();
-  const navigate = useNavigate();
-  console.log(location.pathname);
-
-  if (isError || location.pathname != "/auth") navigate("auth");
-  console.log(isError);
   useEffect(() => {
-    getUser();
+    const token = localStorage.getItem("token") ?? '';
+    getUser(token);
   }, []);
+return (
+  <>
+    <Redirector isRedirect={isError} to="/auth" />
+  </>
+);
+
 };
+
+
 
 export default AuthProvider;

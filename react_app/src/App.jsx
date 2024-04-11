@@ -4,7 +4,6 @@ import LoginPage from './pages/LoginPage/LoginPage';
 import VoteListPage from './pages/VoteListPage/VoteListPage';
 
 function App() {
-  console.log('render');
   return (
     <>
       <AuthProvider />

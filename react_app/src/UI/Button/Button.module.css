@@ -1,4 +1,19 @@
 .button {
-    border-radius: 15px;
-    background-color: yellowgreen;
+  border-radius: 15px;
+   border: 1px solid #000;
+  background-color: transparent;
+  font-family: Montserrat;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  color: #fff;
+  cursor: pointer;
+}
+
+.button:hover {
+   border: 1px solid rgb(72, 232, 253);
+  color: rgb(216, 216, 216);
+
+
 }

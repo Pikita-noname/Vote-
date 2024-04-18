@@ -31,8 +31,6 @@ const Register = ({ changeForm }) => {
 
   return (
     <>
-      <div className={s.pageWrapper}>
-        <div className={s.background}>
           <div>
             <span className={s.label}>Vote!</span>
           </div>
@@ -116,8 +114,6 @@ const Register = ({ changeForm }) => {
               <Cross isValid={isValid} />
             </div>
           </div>
-        </div>
-      </div>
     </>
   );
 };

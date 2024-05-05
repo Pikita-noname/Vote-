@@ -11,7 +11,7 @@ overflow: hidden;
 
 .background {
   height: 120%;
-  background-image: url(./assets/BG-cubes.png);
+  /* background-image: url(./assets/BG-cubes.png); */
   background-position: 0px -130px;
   background-repeat: no-repeat;
   background-size: cover;

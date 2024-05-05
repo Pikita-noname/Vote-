@@ -1,9 +1,26 @@
 .main {
   margin: 0 auto;
-  margin-top: 15%;
+  margin-top: 15vh;
+  padding: 15px;
   width: 60vw;
   height: 60vh;
   border-radius: 45px;
   background: #202020;
   box-shadow: -1px -2px 20px 0px #151313;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px;
+}
+
+.title {
+  color: #FFF;
+text-shadow: 3px 1px 10px #202020;
+font-family: Montserrat;
+font-size: 24px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
 }
